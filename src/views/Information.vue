@@ -11,7 +11,7 @@
       <template slot="extra"> </template>
       <el-descriptions-item>
         <template slot="label">
-          <i class="el-icon-user"></i>5--
+          <i class="el-icon-user"></i>
           用户名
         </template>
         {{ item.nickname }}
