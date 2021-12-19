@@ -20,8 +20,9 @@ export default {
 
 <style lang="less" scoped>
 .index{
+    overflow: hidden;
     padding-top: 20px;
-    height: 100%;
+    
     display: flex;
     justify-content: space-between;
     align-content: flex-end;

@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="index" :style="imgSrc">
     <div class="box">
       <label for="user">账号</label>:&nbsp;&nbsp;<input type="text" id="user" />
       <br />
@@ -8,26 +8,39 @@
         id="password"
       />
       <br />
-      <span class="btn" @click="HandPoint">登录</span>
+      <span class="btn" @click="login">登录</span>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
-  methods: {
-    HandPoint() {
-      this.$store.commit("setLogin", true);
-      this.$router.push("/home");
-    },
+ data() {
+    return {
+      imgSrc: {
+        backgroundImage: "url(" + require("../assets/img/home.jpg") + ")",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition:'center center',
+        
+      },
+    };
   },
+  
+  methods:{
+    login(){
+       this.$router.replace('/home');
+    }
+  },
+  
 };
 </script>
 
 <style lang="less" scoped>
 .index {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +69,6 @@ export default {
       font-weight: bold;
       text-align: center;
       border-radius: 7px;
-      background-color: rgb(43, 124, 97);
       user-select: none;
       cursor: pointer;
       background-color: white;
@@ -67,10 +79,12 @@ export default {
       font-size: 12px;
       font-weight: bold;
       line-height: 25px;
+      color: #9999;
     }
   }
   label {
     font-weight: bold;
+    color: #FFFF;
   }
 }
 </style>

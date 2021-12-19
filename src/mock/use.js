@@ -7,8 +7,7 @@ Mock.mock("/api/user", "get", function() {
     code: 0,
     msg: "",
     data: {
-      total: 200,
-      [`rows|6`]: [
+      [`rows|12`]: [
         {
           id: "@guid",
           nickname: "@cname",
