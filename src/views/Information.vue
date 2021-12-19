@@ -1,15 +1,5 @@
 <template>
   <div class="index">
-    <!-- <el-descriptions v-for="item in data.rows" :key="item.id">
-      <el-descriptions-item label="姓名">{{
-        item.nickname
-      }}</el-descriptions-item>
-      <el-descriptions-item label="手机号">{{
-        item.phone
-      }}</el-descriptions-item>
-      <el-descriptions-item label="邮箱">{{ item.email }}</el-descriptions-item>
-      <el-descriptions-item label="IP网站">{{ item.url }}</el-descriptions-item>
-    </el-descriptions> -->
     <el-descriptions class="margin-top" :column="3" :size="mini" border v-for="item in data.rows" :key="item.id">
     <template slot="extra">
     </template>
@@ -27,7 +17,7 @@
         <i class="el-icon-mobile-phone"></i>
         手机号
       </template>
-      18100000000
+      {{item.url}}
     </el-descriptions-item>
     
     <el-descriptions-item>

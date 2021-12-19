@@ -17,7 +17,8 @@
 export default {
   methods: {
     headClick() {
-      console.log("object");
+      this.$store.commit("setLogin", false);
+      this.$router.push("/");
     },
   },
 };

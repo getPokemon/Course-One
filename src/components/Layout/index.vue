@@ -1,5 +1,6 @@
 <template>
-  <el-container>
+  <div>
+    <el-container v-if="login">
     <el-aside width="200px"><slot name="aside"></slot></el-aside>
     <el-container>
       <el-header><slot name="header"></slot></el-header>
@@ -7,9 +8,12 @@
       <el-footer><slot name="footer"></slot></el-footer>
     </el-container>
   </el-container>
+  <div v-if="!login" id="box"><router-view></router-view></div>
+  </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -18,7 +22,11 @@ export default {
   },
   mounted() {
     this.seeNumber = document.body.clientHeight - 120 + "px";
+    console.log(this.login)
   },
+  computed:{
+     ...mapState(["login", "login"])
+  }
 };
 </script>
 
@@ -53,5 +61,9 @@ body > .el-container {
 
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
+}
+#box{
+  width: 100vw;
+  height: 100vh;
 }
 </style>
